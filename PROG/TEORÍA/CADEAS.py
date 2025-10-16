@@ -15,3 +15,11 @@ print(c.find('a',5,9))
 print(c.join('123456789'))
 print(c.partition(' '))
 print(c.split(" "))
+
+texto4= "Guido Van Rossum creou Python"
+texto4_sin_espacios= texto4.replace(" ","")
+print(texto4_sin_espacios)
+
+textosinsubrayar= "Buenas"
+textosubrayado= '\033[4m' + textosinsubrayar + '\033[0m'
+print(textosubrayado)
