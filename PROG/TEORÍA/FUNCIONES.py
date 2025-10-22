@@ -24,3 +24,12 @@ def datosPersoa (dni, nome, **datosExtendidos):
 
 
 datosPersoa(333J, "Manuel", altura=1.82, peso= 71)
+
+
+lista = [1,2,3,4,5]
+def duplicaLista(l):
+    for i, num in enumerate(l):
+        l[i]= num *2
+    return l
+print (duplicaLista(lista))
+print(lista)

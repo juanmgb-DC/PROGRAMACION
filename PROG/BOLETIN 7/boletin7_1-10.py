@@ -73,8 +73,27 @@ print(texto9solucion)
 print("10")
 
 texto10= "Ola, son alumno de DAM1, e son programador desde o 2025"
-numeros=[1,2,3,4,5,6,7,8,9]
-letras=["abcdefghijklmnopqrstuvwxyz"]
-elementos=[",."]
+numeros="0,1,2,3,4,5,6,7,8,9"
+letras="abcdefghijklmnopqrstuvwxyz"
+espacios=" "
+texto10_minus= texto10.lower()
+total_numeros=0
+total_letras=0
+total_espacios=0
+
+for numero in texto10_minus:
+    if numero in numeros:
+        total_numeros += 1
+print("Total de numeros: ", total_numeros)
+
+for letra in texto10_minus:
+    if letra in letras:
+        total_letras += 1
+print("Total de letras: ", total_letras)
+
+for espacio in texto10_minus:
+    if espacio in espacios:
+        total_espacios += 1
+print("Total de espacios: ", total_espacios)
 
 
