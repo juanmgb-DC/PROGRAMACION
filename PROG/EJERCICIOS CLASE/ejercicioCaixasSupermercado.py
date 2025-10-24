@@ -18,6 +18,8 @@ def mostrarContidoUnhaCaixa (caixa, totalEfectivoCaixas):
                    print(contidoCaixa[i][1], "moedas de",contidoCaixa[i][0], "Euros")
 
 mostrarContidoUnhaCaixa('1',efectivo)
+mostrarContidoUnhaCaixa('2',efectivo)
+mostrarContidoUnhaCaixa('3',efectivo)
 
 
 caixa1=[[100,1],[50,13],[20,5]]
