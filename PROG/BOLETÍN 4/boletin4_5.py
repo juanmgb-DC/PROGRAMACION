@@ -5,14 +5,14 @@ def calcular_letra_dni(dni):
 
 while True:
     try:
-        dni=int(input("Escribe a tua letra do DNI: "))
+        dni=int(input("Escribe o numero do DNI: "))
     except ValueError:
         print("Debes introducir solo numeros")
         continue
 
     if 10000000 <= dni <= 99999999:
         letra= calcular_letra_dni(dni)
-        print(f"El DNI completo es: ,{dni}{letra}")
+        print(f"El DNI completo es: {dni}{letra}")
         break
     else:
         print("Introduce 8 dígitos")
