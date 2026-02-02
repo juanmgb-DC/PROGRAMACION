@@ -1,50 +1,48 @@
 class Persoa:
     def __init__(self, nome, direccion, dni):
-        self.nome= str(nome)
-        self.direccion= str(direccion)
-        self.dni= str(dni)
+        self.setNome(nome)
+        self.setDireccion(direccion)
+        self.setDni(dni)
 
-    def setNome(self,nome):
-        if nome(type) == str:
+    def setNome(self, nome):
+        if isinstance(nome, str):
             self.nome = nome
         else:
-           return ("Nome non valido")
+            raise TypeError("Nome non valido")
 
     def getNome(self):
         return self.nome
 
-    def setDireccion(self,direccion):
-        if direccion(type) == str:
+    def setDireccion(self, direccion):
+        if isinstance(direccion, str):
             self.direccion = direccion
         else:
-           return ("Direccion non valida")
+            raise TypeError("Direccion non valida")
 
     def getDireccion(self):
         return self.direccion
 
-
-
-    def setDni(self,dni):
-        if dni(type) == str:
+    def setDni(self, dni):
+        if isinstance(dni, str):
             self.dni = dni
         else:
-            return("Dni non valido")
+            raise DniNonValido("Dni non valido")
 
     def getDni(self):
         return self.dni
 
+
 class DniNonValido(Exception):
- pass
+    pass
 
 
+Juan = Persoa("Juan", "Pi y Margall", "54230432C")
 
-Juan = Persoa("Juan","Pi y Margall","54230432C")
-
-print (Juan.getDireccion())
-print (Juan.getNome())
-print (Juan.getDni())
+print(Juan.getDireccion())
+print(Juan.getNome())
+print(Juan.getDni())
 
 try:
-   print(Juan.setDni(12131))
-except TypeError:
-  raise DniNonValido ("El Dni no es valido")
+    Juan.setDni(12131)
+except DniNonValido as e:
+    print(e)
