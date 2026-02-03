@@ -1,23 +1,23 @@
 class Persoa:
     def __init__(self, nome, direccion, dni):
-        self.nome= str(nome)
-        self.direccion= str(direccion)
-        self.dni= str(dni)
+        self.nome= (nome)
+        self.direccion= (direccion)
+        self.dni= (dni)
 
     def setNome(self,nome):
-        if nome(type) == str:
+        if isinstance(nome,str):
             self.nome = nome
         else:
-           return ("Nome non valido")
+           return ValueError("Nome non valido")
 
     def getNome(self):
         return self.nome
 
     def setDireccion(self,direccion):
-        if direccion(type) == str:
+        if isinstance(direccion,str):
             self.direccion = direccion
         else:
-           return ("Direccion non valida")
+           return ValueError("Direccion non valida")
 
     def getDireccion(self):
         return self.direccion
@@ -25,10 +25,10 @@ class Persoa:
 
 
     def setDni(self,dni):
-        if dni(type) == str:
+        if isinstance(dni,str):
             self.dni = dni
         else:
-            return("Dni non valido")
+            return DniNonValido("Dni non valido")
 
     def getDni(self):
         return self.dni
@@ -46,5 +46,5 @@ print (Juan.getDni())
 
 try:
    print(Juan.setDni(12131))
-except TypeError:
-  raise DniNonValido ("El Dni no es valido")
+except DniNonValido as e:
+    print(e)
