@@ -1,30 +1,41 @@
-ficheiro = open('notas.txt','w')
+arquivo = "notas.txt"
 
-ficheiro.write("Hola soy Juan\n")
-ficheiro.write("Estoy estudiando DAM")
+while True:
+    print("1 Engadir nota")
+    print("2 Listar notas")
+    print("3 Buscar nota")
+    print("4 Saír")
 
+    opcion = input("Opción: ")
 
-ficheiro.close()
+    if opcion == "1":
+        nota = input("Nota: ")
+        f = open(arquivo, "a")
+        f.write(nota + "\n")
+        print("Nota gardada")
+        f.close()
 
-ficheiro = open('notas.txt','r')
-lectura = ficheiro.read()
-ficheiro.close()
+    elif opcion == "2":
+        try:
+            f = open(arquivo, "r")
+            for liña in f:
+                print(liña.strip())
+            f.close()
+        except FileNotFoundError:
+            print("Non hai notas")
 
+    elif opcion == "3":
+        palabra = input("Palabra: ")
+        try:
+            f = open(arquivo, "r",)
+            for liña in f:
+                if palabra.lower() in liña.lower():
+                    print(liña.strip())
+                else:
+                    print("A palabra non se encuentra en esta linea")
+            f.close()
+        except FileNotFoundError:
+            print("Non hai notas")
 
-def buscar_notas():
-    palabra = input("Introduce a palabra clave: ").lower()
-    atopadas = False
-
-    try:
-        with open("notas.txt", "r") as ficheiro:
-            for i, nota in enumerate(ficheiro, start=1):
-                if palabra in nota.lower():
-                    print(f"Nota {i}: {nota.strip()}")
-                    atopadas = True
-
-        if not atopadas:
-            print("Non se atoparon notas con esa palabra.")
-    except FileNotFoundError:
-        print("O ficheiro de notas aínda non existe.")
-
-buscar_notas()
+    elif opcion == "4":
+        break
