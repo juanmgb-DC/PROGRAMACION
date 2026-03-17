@@ -23,7 +23,7 @@ while True:
                    for palabra in palabras:
                        palabra = palabra.lower()
                        if palabra in cuenta:
-                           cuenta[palabra] =+ 1
+                           cuenta[palabra] += 1
                        else:
                            cuenta[palabra] = 1
                 for palabra, veces in cuenta.items():
